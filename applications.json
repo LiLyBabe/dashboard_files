@@ -13,7 +13,7 @@
       {"name": "Document Completed"},
       {"name": "Document Incomplete"},
       {"name": "Confirmed By Underwriter"},
-      {"name": "Failed by Underwriter"},
+      {"name": "Failed By Underwriter"},
       {"name": "Accepted Offer"},
       {"name": "Rejected Offer"},
       {"name": "First Defaulter"},
