@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+        <script src="lib/jquery.min.js"></script>
+        <script src="lib/popper.min.js"></script>
+        <script src="lib/bootstrap.min.js"></script>
+        <script src="lib/echarts.js"></script>
+    
+        <link rel="stylesheet" href="lib/bootstrap.min.css">
+    </head>
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
+        <script type="text/javascript">
+        var dom = document.getElementById("container");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = {
+            xAxis: {
+                type: 'category',
+                name: "Loan Purpose",
+                nameLocation: 'center',
+                nameGap: 45,
+                data: ["Living expenses", "Education, Healthcare & Insurance", 
+                "Product Shopping", "Service Purchase", "Business Invesment", "Other"],
+                axisTick: false,
+                axisLabel: {
+                    interval: 0,
+                    width: 120,
+                    overflow: "break"
+                }
+            },
+            yAxis: [
+                {
+                    type: 'value',
+                    name: "Number of Applications",
+                    nameLocation: 'center',
+                    nameGap: 50,
+                    nameTextStyle: {
+                        fontSize: 14,
+                        fontFamily: "calibri"
+                    }
+                }
+            ],
+            
+            series: [{
+                data: [93, 96, 59, 49, 91, {
+                    value: 46,
+                    itemStyle: {
+                        color: "#28363D"
+                    }
+                }],
+                type: 'bar',
+                stack: 'noApplications',
+                label: {
+                    show: true,
+                    position: 'top'
+                },
+                color: "#6d9197"
+            }]
+        };
+        if (option && typeof option === 'object') {
+            myChart.setOption(option);
+        }
+
+        </script>
+    </body>
+</html>
+    

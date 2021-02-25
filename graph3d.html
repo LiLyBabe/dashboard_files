@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+  <title>Graph 3D demo</title>
+  <style>body {font: 14pt arial;}</style>
+  
+    <script type="text/javascript" src="../vis/vis/dist/vis.min.js"></script>
+    <script src="lib/jquery.min.js"></script>
+  
+  <script type="text/javascript">
+//  alert ("1");
+		
+		function drawVisualization() {
+//		alert("Start function");
+// Create and populate a data table.
+            $.getJSON('https://lilybabe.github.io/dashboard_files/LimitControl.json', function (mydata) {
+                var data = new vis.DataSet(mydata);
+                // data.add([{index: 1, x: 0.153, y: 2900, z: 200.07}, {index: 2, x: 0.55, y: 2000, z: 35.07}, {index: 3, x: 0.86, y: 4000, z: -213.07}]);
+
+                var options = {
+                    width:  '100%',
+                    height: '800px',
+                    style: 'dot-line',
+                    showPerspective: true,
+                    showGrid: true,
+                    showShadow: true,
+                    keepAspectRatio: false,
+                    verticalRatio: 0.5,
+                    backgroundColor:'',
+                    dotSizeRatio: 0.003,
+                    zLabel: 'Risk-adjusted Profit',
+                    yLabel:'Loan Amount',
+                    xLabel: 'Probability of Default',
+                };
+
+                // Instantiate our graph object.
+                var container = document.getElementById('mygraph');
+                //alert("before creating graph");
+                var graph = new vis.Graph3d(container, data, options);
+                //alert("after creating graph");
+            });
+        };
+	
+  </script>
+  
+
+</head>
+
+<body onload="drawVisualization();">
+<div id="mygraph"></div>
+
+<!-- <div id="info"></div> -->
+</body>
+</html>
+
