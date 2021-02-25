@@ -18,7 +18,7 @@ def get_graph_data():
 
 if __name__ == '__main__': 
     json_file = get_graph_data()
-    filePathName = 'D:/Epay/Epay/Dashboard/dashboard_files/' + 'NoLimitControl' + '.json'
+    filePathName = 'D:/Epay/Epay/Dashboard/dashboard_files/' + 'NoLimitControl' + '.json' 
 
     with open(filePathName, 'w') as fp:
         json.dump(json_file, fp)
